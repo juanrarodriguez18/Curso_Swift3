@@ -8,8 +8,13 @@
 
 import UIKit
 
+@objc protocol CreateColorViewControllerDelegate {
+    func createColor(name: String, color: UIColor)
+}
+
 class CreateColorViewController: UIViewController, UITextFieldDelegate {
     
+    weak var delegate: CreateColorViewControllerDelegate?
     weak var selectedButton: UIButton?
     
     @IBOutlet weak var colorTextField: UITextField!
@@ -27,6 +32,7 @@ class CreateColorViewController: UIViewController, UITextFieldDelegate {
         selectedButton = sender
         
     }
+    
     @IBAction func save(_ sender: UIBarButtonItem) {
         let name = colorTextField.text
         let color = UIColor(cgColor: selectedButton!.layer.backgroundColor!)
@@ -36,6 +42,7 @@ class CreateColorViewController: UIViewController, UITextFieldDelegate {
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }else{
+            delegate?.createColor(name: name!, color: color)
             navigationController?.popViewController(animated: true)
         }
     }
