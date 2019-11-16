@@ -34,6 +34,9 @@ class CamaraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let picture = info[.originalImage] as! UIImage
+        
+        pictureImageView.image = picture
         dismiss(animated: true, completion: nil)
     }
 }
