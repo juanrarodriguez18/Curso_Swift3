@@ -43,6 +43,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         return pin
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let alet = UIAlertController(title: "Ouch!", message: "Estamos en lat: \(mapView.userLocation.coordinate.latitude) long \(mapView.userLocation.coordinate.longitude)", preferredStyle: .alert)
+        
+        let cancelar = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alet.addAction(cancelar)
+            
+        self.present(alet, animated: true, completion: nil)
+    }
+    
     @IBAction func addPinToMap(_ sender: UIBarButtonItem) {
         let pin = MKPointAnnotation()
         pin.coordinate = mapView!.userLocation.coordinate
