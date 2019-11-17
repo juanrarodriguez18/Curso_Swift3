@@ -14,6 +14,8 @@
 		1C7A1B4623522C9E00D3B100 /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A1B4523522C9E00D3B100 /* ColorsViewController.swift */; };
 		1C7A1B4823522D7500D3B100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7A1B4723522D7500D3B100 /* Main.storyboard */; };
 		1C7A1B4A2352300300D3B100 /* CreateColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A1B492352300300D3B100 /* CreateColorViewController.swift */; };
+		1C7A63FB2381941000B3D93A /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A63FA2381941000B3D93A /* FriendsTableViewController.swift */; };
+		1C7A63FE238194C100B3D93A /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A63FD238194C100B3D93A /* Friend.swift */; };
 		1CB2177A2378639A005F70D0 /* CamaraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB217792378639A005F70D0 /* CamaraViewController.swift */; };
 		1CEEB49B235C9D3600C1F774 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEEB49A235C9D3600C1F774 /* MapViewController.swift */; };
 		1CEEB49E235C9FFF00C1F774 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CEEB498235C9B1800C1F774 /* MapKit.framework */; };
@@ -41,6 +43,8 @@
 		1C7A1B4523522C9E00D3B100 /* ColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
 		1C7A1B4723522D7500D3B100 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1C7A1B492352300300D3B100 /* CreateColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateColorViewController.swift; sourceTree = "<group>"; };
+		1C7A63FA2381941000B3D93A /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		1C7A63FD238194C100B3D93A /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		1CB217792378639A005F70D0 /* CamaraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaraViewController.swift; sourceTree = "<group>"; };
 		1CEEB498235C9B1800C1F774 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1CEEB49A235C9D3600C1F774 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 		1C7A1B2423522A7300D3B100 /* SwiftApp */ = {
 			isa = PBXGroup;
 			children = (
+				1C7A63FC238194B500B3D93A /* Models */,
 				1CEEB49D235C9D7900C1F774 /* Views */,
 				1CEEB49C235C9D5800C1F774 /* Controllers */,
 				1C7A1B3123522A7B00D3B100 /* Info.plist */,
@@ -105,6 +110,14 @@
 			path = SwiftAppTests;
 			sourceTree = "<group>";
 		};
+		1C7A63FC238194B500B3D93A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1C7A63FD238194C100B3D93A /* Friend.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1CEEB497235C9B1800C1F774 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,10 +129,11 @@
 		1CEEB49C235C9D5800C1F774 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1CB217792378639A005F70D0 /* CamaraViewController.swift */,
 				1C7A1B4523522C9E00D3B100 /* ColorsViewController.swift */,
 				1C7A1B492352300300D3B100 /* CreateColorViewController.swift */,
+				1C7A63FA2381941000B3D93A /* FriendsTableViewController.swift */,
 				1CEEB49A235C9D3600C1F774 /* MapViewController.swift */,
-				1CB217792378639A005F70D0 /* CamaraViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -235,7 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CB2177A2378639A005F70D0 /* CamaraViewController.swift in Sources */,
+				1C7A63FE238194C100B3D93A /* Friend.swift in Sources */,
 				1C7A1B4623522C9E00D3B100 /* ColorsViewController.swift in Sources */,
+				1C7A63FB2381941000B3D93A /* FriendsTableViewController.swift in Sources */,
 				1C7A1B4A2352300300D3B100 /* CreateColorViewController.swift in Sources */,
 				1C7A1B2623522A7300D3B100 /* AppDelegate.swift in Sources */,
 				1CEEB49B235C9D3600C1F774 /* MapViewController.swift in Sources */,
