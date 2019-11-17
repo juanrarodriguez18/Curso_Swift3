@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageIO
 
 class CamaraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -35,6 +36,17 @@ class CamaraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let picture = info[.originalImage] as! UIImage
+        let meta = info[.mediaMetadata] as! NSDictionary
+        let exif = meta.object(forKey: kCGImagePropertyExifDictionary) as! Dictionary<String, AnyObject>
+        
+        let date = exif[kCGImagePropertyExifDateTimeOriginal as String] as! String
+        let xPixels = exif[kCGImagePropertyExifPixelXDimension as String] as! Int
+        let yPixels = exif[kCGImagePropertyExifPixelYDimension as String] as! Int
+        let lens = exif[kCGImagePropertyCIFFLensModel as String] as! String
+        
+        dateLabel.text = date
+        sizeLabel.text = "\(xPixels) x \(yPixels)"
+        lensLabel.text = lens
         
         pictureImageView.image = picture
         dismiss(animated: true, completion: nil)
